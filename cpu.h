@@ -1,17 +1,20 @@
 #pragma once
 #include <stdint.h>
-#include "main.h"
+
+#include "display.h"
+
+#define RAM_SIZE 4096
 
 
 typedef struct
 {
     uint16_t pc;
-    uint16_t i;
+    uint16_t i; //index register
     uint8_t delay_timer;
     uint8_t sound_timer;
-
-    uint8_t v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, va, vb, vc, vd, ve;
-
+    
+    uint8_t v[16]; //v registers
+    
     unsigned char memory[RAM_SIZE];
 } CPU;
 
@@ -24,5 +27,6 @@ CPU_Delete(CPU* cpu);
 uint16_t
 CPU_Fetch(CPU* cpu);
 
+//decode and execute
 void
-CPU_Dexecute(CPU* cpu, uint16_t inst);
+CPU_Dexecute(CPU* cpu, Display* display, const uint16_t inst);

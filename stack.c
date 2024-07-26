@@ -30,7 +30,7 @@ AddressStack_Delete(AddressStack* stack)
 }
 
 int 
-AddressStack_Add(AddressStack* stack, uint16_t address)
+AddressStack_Add(AddressStack* stack, const uint16_t address)
 {
     if (!stack)
     {
@@ -55,7 +55,7 @@ AddressStack_Add(AddressStack* stack, uint16_t address)
 
 //THIS SHOULD PRINT IN HEX BUT I FORGOT THE FORMATTING.
 int 
-AddressStack_Print(AddressStack* stack, int index)
+AddressStack_Print(const AddressStack* stack, const int index)
 {
     if (!stack)
     {
@@ -78,7 +78,7 @@ AddressStack_Print(AddressStack* stack, int index)
 }
 
 int 
-AddressStack_PrintStack(AddressStack* stack)
+AddressStack_PrintStack(const AddressStack* stack)
 {
     if (!stack)
     {

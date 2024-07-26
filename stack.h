@@ -18,10 +18,10 @@ AddressStack_Create();
 void 
 AddressStack_Delete(AddressStack* stack);
 int 
-AddressStack_Add(AddressStack* stack, uint16_t address);
+AddressStack_Add(AddressStack* stack, const uint16_t address);
 
 //Debug
 int
-AddressStack_Print(AddressStack* stack, int index);
+AddressStack_Print(AddressStack* stack, const int index);
 int 
-AddressStack_PrintStack(AddressStack* stack);
+AddressStack_PrintStack(const AddressStack* stack);
